@@ -8,6 +8,7 @@ body {
   position: relative;
 }
 body {
+  overflow: hidden;
   background: url(images/shoe1.jpg) center;
 }
 
@@ -77,6 +78,7 @@ body {
   padding: 30px;
   padding-bottom: 0;
   line-height: 90%;
+  animation: onload 0.8s ease-out;
 }
 .info .grid .title span:nth-child(1) {
   color: #00afefcb;
@@ -100,8 +102,14 @@ body {
   padding: 10px;
   padding-right: 30px;
   font-family: "Actor", sans-serif;
+  transition: all 0.5s ease-in;
 }
-
+.info .grid .content-1 p:hover {
+  transform: scale(1.02);
+  transition: all 0.5s ease-out;
+}
+.info .grid .content-1 p:nth-child(1){animation: onload 1s ease-out;}
+.info .grid .content-1 p:nth-child(2){animation: onload 0.9s ease-out;}
 .info .grid .content-2 {
   opacity: 0;
   display: flex;
@@ -119,6 +127,17 @@ body {
   color: white;
   transform: scale(1.2);
   transition: all 0.3s ease-out;
+}
+
+@keyframes onload {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media screen and (max-width: 759px) {
